@@ -10,7 +10,7 @@
         public void AddItem(Product product , int quantity)
         {
             if (quantity > product.Quantity)
-                throw new ArgumentException($"Requested quantity of \"{product.Name}\" exceeds available stock ({product.Quantity}).");
+                Console.WriteLine($"Requested quantity of \"{product.Name}\" exceeds available stock ({product.Quantity}).");
 
             items.Add(new CartItem(product, quantity));
         }

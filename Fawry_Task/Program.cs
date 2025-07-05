@@ -7,7 +7,6 @@ class Program
         var biscuits = new ShippableExpiringProduct("Biscuits", 150 , 2 , DateTime.Now.AddDays(1) , 0.7);
         var mobile = new ShippableProduct("Mobile" , 300 , 4 , 0.125 );
 
-
         var Customer = new Customer("Essam", 10000);
         var cart = new Cart();
 

@@ -13,9 +13,9 @@
             foreach (var item in cart.GetItems())
             {
                 if (item.Product.IsExpired())
-                    throw new Exception($"Product {item.Product.Name} is expired");
+                    Console.WriteLine($"Product {item.Product.Name} is expired");
                 if (item.Quantity > item.Product.Quantity)
-                    throw new Exception($"Insufficient quantity for {item.Product.Name}");
+                    Console.WriteLine($"Insufficient quantity for {item.Product.Name}");
 
                 subtotal+= item.Product.Price * item.Quantity;
 
@@ -28,7 +28,7 @@
             }
             double total = subtotal + shippingCost;
             if (customer.Balance < total)
-                throw new Exception("Insufficient balance for checkout.");
+                Console.WriteLine("Insufficient balance for checkout.");
 
             foreach (var item in cart.GetItems())
             {
