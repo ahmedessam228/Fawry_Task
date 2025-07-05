@@ -7,12 +7,18 @@ class Program
         var biscuits = new ShippableExpiringProduct("Biscuits", 150 , 2 , DateTime.Now.AddDays(1) , 0.7);
         var mobile = new ShippableProduct("Mobile" , 300 , 4 , 0.125 );
 
-        var Customer = new Customer("Essam", 10000);
-        var cart = new Cart();
+        var customer1 = new Customer("Essam", 10000);
+        var cart1 = new Cart();
 
-        cart.AddItem(Cheese, 2);
-        cart.AddItem(biscuits, 1);
-        cart.AddItem(mobile, 3);
-        CheckoutService.Checkout(Customer,cart);
+        var customer2 = new Customer("ALi", 5000);
+        var cart2 = new Cart();
+
+        cart1.AddItem(Cheese, 2);
+        cart1.AddItem(biscuits, 1);
+        cart2.AddItem(mobile, 3);
+        CheckoutService.Checkout(customer1,cart1);
+        Console.WriteLine("***************************");
+        CheckoutService.Checkout(customer2, cart2);
+
     }
 }
